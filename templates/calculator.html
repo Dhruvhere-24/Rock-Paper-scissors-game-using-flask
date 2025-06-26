@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apple Calculator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">{{ display }}</div>
+    <form method="post">
+      {% for row in buttons %}
+      <div class="button-row">
+        {% for btn in row %}
+          <button name="button" value="{{ btn['value'] }}" class="btn {{ btn.get('class', '') }}">{{ btn['label'] }}</button>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </form>
+  </div>
+</body>
+</html>

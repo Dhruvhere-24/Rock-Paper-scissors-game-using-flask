@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SF Pro Display', Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #3b4966, #03142c)
+}
+
+.calculator {
+    background: #181818;
+    border-radius: 36px;
+    box-shadow: 0 4px 32px #000a;
+    padding: 32px 24px 24px 24px;
+    width: 320px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.display {
+    background: #1e1e1e;
+    color: #fff;
+    font-size: 2.5em;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: right;
+    margin-bottom: 8px;
+    letter-spacing: 1.5px;
+    min-height: 50px;
+    box-shadow: 0 1px 4px #0005;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.45em;
+    min-width: 56px;
+    min-height: 56px;
+    max-width: 64px;
+    max-height: 64px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 600;
+    box-shadow: 0 2px 8px #1119;
+    outline: none;
+    user-select: none;
+}
+
+.btn:active {
+    background: #555;
+}
+
+.btn.function {
+    background: #a5a5a5;
+    color: #181818;
+}
+
+.btn.operator {
+    background: #ff9500;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn.zero {
+    flex: 2.2;
+    border-radius: 34px;
+    text-align: left;
+    padding-left: 30px;
+    min-width: 143px;
+}
+
+@media (max-width: 390px) {
+    .calculator {
+        width: 98vw;
+        padding: 15px 3vw;
+    }
+
+    .btn {
+        min-width: 38px;
+        min-height: 38px;
+        max-width: 50px;
+        max-height: 50px;
+        font-size: 1.05em;
+    }
+
+    .btn.zero {
+        min-width: 65px;
+        padding-left: 14px;
+    }
+}
+.calculator {
+    background: rgba(255, 255, 255, 0.08); /* More visible frosted effect */
+    border-radius: 36px;
+    padding: 32px 24px 24px 24px;
+    width: 320px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    /* Glassmorphism effects */
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.2),  /* subtle border edge */
+        0 10px 30px rgba(0, 0, 0, 0.4),     /* main shadow */
+        0 4px 80px rgba(255, 255, 255, 0.1); /* outer glow */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+
+    /* Optional inner gradient for depth */
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.02)
+    );
+}
