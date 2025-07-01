@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+
+        <div class="score-board">
+            <div class="score" id="user-score">
+                <h2>You</h2>
+                <div class="number">{{ user_score }}</div>
+            </div>
+            <div class="score" id="computer-score">
+                <h2>Computer</h2>
+                <div class="number">{{ computer_score }}</div>
+            </div>
+        </div>
+
+        <div class="battle-area">
+            <div class="player">
+                <h3>You</h3>
+                <div class="hand">
+                    <img src="{{ url_for('static', filename='img/' ~ user_choice ~ '.png') }}" alt="{{ user_choice }}">
+                </div>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="computer">
+                <h3>Computer</h3>
+                <div class="hand">
+                    <img src="{{ url_for('static', filename='img/' ~ computer_choice ~ '.png') }}" alt="{{ computer_choice }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="choices">
+            <form action="{{ url_for('play') }}" method="post">
+                <button type="submit" name="choice" value="rock">
+                    <img src="{{ url_for('static', filename='img/rock.png') }}" alt="Rock">
+                </button>
+                <button type="submit" name="choice" value="paper">
+                    <img src="{{ url_for('static', filename='img/paper.png') }}" alt="Paper">
+                </button>
+                <button type="submit" name="choice" value="scissors">
+                    <img src="{{ url_for('static', filename='img/scissors.png') }}" alt="Scissors">
+                </button>
+            </form>
+        </div>
+
+        <div class="result">
+            {% if result %}
+                <p class="result-text">
+                    {% if result == 'win' %}You win!{% elif result == 'lose' %}Computer wins!{% else %}It's a draw!{% endif %}
+                </p>
+            {% else %}
+                <p class="result-text">Choose your weapon!</p>
+            {% endif %}
+        </div>
+
+        <form action="{{ url_for('reset') }}" method="post">
+            <button type="submit" class="reset-btn">Reset Game</button>
+        </form>
+    </div>
+</body>
+</html>
