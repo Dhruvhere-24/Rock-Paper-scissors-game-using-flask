@@ -17,7 +17,7 @@ The traditional logic usually handled by JavaScript on the frontend has been mov
 ---
 
 ## 📁 Folder Structure
-
+```bash
 Rock-Paper-scissors-game-using-flask/
 │
 ├── static/
@@ -28,7 +28,7 @@ Rock-Paper-scissors-game-using-flask/
 │
 ├── app.py # Main Flask application (Python handles game logic)
 ├── README.md # Project documentation (this file)
-
+```
 
 ---
 
@@ -51,3 +51,26 @@ This server-side handling demonstrates how simple games or logic-based interacti
    ```bash
    git clone https://github.com/Dhruvhere-24/Rock-Paper-scissors-game-using-flask
    cd Rock-Paper-scissors-game-using-flask
+   ```
+
+2. **Install dependencies (Flask):**
+   ```bash
+   pip install flask
+   ```
+3. **Run the app:**
+   ```bash
+   python app.py
+   ```
+4. **Open in your browser:**
+   ```bash
+   http://localhost:5000
+   ```
+🧑‍💻 Author
+
+- Dhruv Singh
+- GitHub: @Dhruvhere-24
+
+-------------------------------------------------------
+📢 Acknowledgement
+
+This project was completed as part of the CodSoft Internship program.
